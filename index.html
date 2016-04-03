@@ -1,0 +1,51 @@
+<html ng-app="login">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="AuthController as ac">
+    
+    
+    <form ng-submit="submitForm()" ng-show="!member">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" ng-model="ac.user.email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" ng-model="ac.user.password">
+        </div>
+        <div class="button-group">
+            <button type="submit" ng-click="submitForm = register">Register</button>
+        </div>
+    </form>
+    <div ng-show="member">
+        <h1>Welcome {{member.username}}</h1>
+        
+        
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="item in itemList">{{item.body}} <span class="badge" ng-click="removeItem(item)">X</span></li>
+        </ul>
+        
+        <input type="text" ng-model="newItem"/>
+        <button ng-click="addItem()">ADD ITEM</button>
+        
+    </div>
+
+
+    <!--LOAD ANGULAR-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+    <!--LOAD FIREBASE-->
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+    
+    <!--START APP-->
+    <script src="app/app.js"></script>
+
+</body>
+
+</html>
