@@ -4,35 +4,47 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize.css -->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/styles.css"/>
 </head>
 
 <body ng-controller="AuthController as ac">
-    
-    
-    <form ng-submit="submitForm()" ng-show="!member">
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" ng-model="ac.user.email">
+<br>
+<br>
+<br>
+<br>
+<br
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<div class="container">
+<div class="row">
+    <form ng-submit="submitForm()" ng-show="!member" class="col s12">
+        <div class="input field col s6">
+            <input placeholder="Email" type="email" ng-model="ac.user.email" class="validate">
         </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" ng-model="ac.user.password">
+        <div class="input field col s6">
+            <input placeholder="Password" type="password" ng-model="ac.user.password">
         </div>
+        <center>
         <div class="button-group">
-            <button type="submit" ng-click="submitForm = register">Register</button>
+            <button type="submit" class="btn waves-effect waves-light indigo darken-4" ng-click="submitForm = register">Sign Up</button>
+        </div>
+        </center>
+        </form>
         </div>
     </form>
     <div ng-show="member">
-        <h1>Welcome {{member.username}}</h1>
-        
-        
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="item in itemList">{{item.body}} <span class="badge" ng-click="removeItem(item)">X</span></li>
-        </ul>
-        
-        <input type="text" ng-model="newItem"/>
-        <button ng-click="addItem()">ADD ITEM</button>
-        
+        <div class="container">
+        <iframe align=center src=
+
+http://www.flickr.com/slideShow/index.gne?user_id=141287201@N07
+frameBorder=0 width=500 scrolling=no height=500></iframe>
+         </div>
     </div>
 
 
@@ -45,6 +57,33 @@
     
     <!--START APP-->
     <script src="app/app.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript">
+    
+    
+    </script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.tooltipped').tooltip({delay: 50});
+
+            setInterval(function(){
+                var ios_img = "img/ios_main.png",
+                    android_img = "img/android_main.png";
+
+                if ($("#show").attr("src") === android_img) {
+                    $("#show").attr({
+                        src: ios_img
+                    });
+                } else {
+                    $("#show").attr({
+                        src: android_img
+                    });
+                }
+            }, 5000);
+        });
+    </script>
 
 </body>
 

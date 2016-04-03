@@ -37,6 +37,7 @@ app.controller('AuthController', function($scope, FBREF, $firebaseArray){
     
     function handleDBResponse (err, authData){
         if(err){
+            Materialize.toast(err, 4000);
             console.log(err);
             return;
         } 
